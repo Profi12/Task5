@@ -71,6 +71,20 @@
             return count;
         }
 
+        public static void TransponateMatrix(int[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); ++i)
+            {
+                for (int j = i + 1; j < array.GetLength(1); ++j)
+                {
+                    if(j < array.GetLength(0) && i < array.GetLength(1))
+                    {
+                        Swap(ref array[i, j], ref array[j, i]);
+                    }
+                }
+            }
+        }
+
         private static bool IsMoreThanNeighbours(int[,] array, int i, int j)
         {
             bool moreThanNeighbours = true;
@@ -104,6 +118,13 @@
             }
 
             return moreThanNeighbours;
+        }
+
+        private static void Swap(ref int a, ref int b)
+        {
+            int tmp = a;
+            a = b;
+            b = tmp;
         }
     }
 }
