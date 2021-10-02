@@ -1,9 +1,15 @@
-﻿namespace Task5_Library
+﻿using System;
+
+namespace Task5_Library
 {
     public class TaskHelper
     {
         public static int Min(int[,] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
             (int i, int j) = MinIndex(array);
 
             return array[i, j];
@@ -11,6 +17,10 @@
 
         public static int Max(int[,] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
             (int i, int j) = MaxIndex(array);
 
             return array[i, j];
