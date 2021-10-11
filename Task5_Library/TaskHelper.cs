@@ -28,6 +28,11 @@ namespace Task5_Library
 
         public static (int i, int j) MinIndex(int[,] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
             int minI = 0;
             int minJ = 0;
 
@@ -48,6 +53,11 @@ namespace Task5_Library
 
         public static (int i, int j) MaxIndex(int[,] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
             int maxI = 0;
             int maxJ = 0;
 
@@ -68,6 +78,11 @@ namespace Task5_Library
 
         public static int GetNeighboursCounter(int[,] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
             int count = 0;
 
             for (int i = 0; i < array.GetLength(0); i++)
@@ -83,6 +98,11 @@ namespace Task5_Library
 
         public static void TransponateMatrix(int[,] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
             for (int i = 0; i < array.GetLength(0); ++i)
             {
                 for (int j = i + 1; j < array.GetLength(1); ++j)
